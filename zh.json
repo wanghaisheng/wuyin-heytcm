@@ -1,0 +1,373 @@
+{
+  "landingPage": {
+    "hero": {
+      "title": "发现您的天赋感官，开启个性化疗愈之旅",
+      "subtitle": "专业五感测试，精准定制中医五音五色疗愈方案",
+      "description": "每个人都有独特的感官天赋，是 neighbourhood 您对音乐更敏感，还是对颜色更有共鸣？我们的测试将帮助您发现自己的天赋感官，并提供个性化的中医五音或五色疗愈方案。",
+      "cta": "立即开始免费测试"
+    },
+    "problem": {
+      "title": "还在为压力和健康问题困扰？你不是一个人！",
+      "painPoint": "低效的疗愈方法不仅浪费时间，更阻碍您达到理想的健康状态与平衡。",
+      "solution": "五感测试为您量身打造，一键解决健康困扰，帮助您通过个性化疗愈实现平衡。"
+    },
+    "features": {
+      "title": "改变您健康旅程的核心功能",
+      "feature1": {
+        "title": "场景一：缓解压力 - 发现您的天赋感官",
+        "description": "我们的专业评估可识别您是对音乐还是颜色更敏感，指导您找到完美的疗愈路径。"
+      },
+      "feature2": {
+        "title": "场景二：个性化疗愈 - 定制五音或五色疗法",
+        "description": "基于您的感官天赋，获取针对特定健康需求的定制疗愈方案。"
+      },
+      "feature3": {
+        "title": "场景三：日常实践 - 简单有效的疗愈习惯",
+        "description": "每天仅需15分钟，通过我们的引导疗愈资源，带来显著的健康改善。"
+      }
+    },
+    "value": {
+      "title": "五感测试 - 健康关注者的终极工具！",
+      "subtitle": "我们致力于帮助健康关注者通过古老智慧和现代科学，实现压力减轻70%，睡眠质量提升80%。"
+    },
+    "testimonials": {
+      "title": "超过10,000用户的共同选择！",
+      "testimonial1": {
+        "name": "李女士，教师",
+        "type": "音乐敏感型",
+        "text": "测试发现我对音乐特别敏感，睡眠质量明显改善。之前需要半小时才能入睡，现在几分钟就能进入深度睡眠。",
+        "result": "已使用五音疗愈方案4个月，睡眠质量提升80%"
+      },
+      "testimonial2": {
+        "name": "张先生，IT工程师",
+        "type": "颜色敏感型",
+        "text": "五感测试太精准了！按照定制的五色疗愈方案调整了办公室和家里的布置，工作压力减轻了很多。",
+        "result": "已使用五色疗愈方案6个月，工作效率提升65%"
+      }
+    },
+    "howItWorks": {
+      "title": "简单易用，三步上手！",
+      "step1": "完成五感测试",
+      "step1_desc": "通过我们精心设计的交互式测试，测量您对音乐和颜色的敏感度",
+      "step2": "获取天赋感官分析",
+      "step2_desc": "我们的系统会分析您的反应，确定您是对音乐还是颜色更敏感",
+      "step3": "获得疗愈方案",
+      "step3_desc": "基于您的天赋感官，我们将提供个性化的中医五音或五色疗愈方案",
+      "step4": "开始疗愈之旅",
+      "step4_desc": "按照专业指导，在家轻松实践您的个性化疗愈方案，改善身心健康"
+    },
+    "preview": {
+      "title": "抢先预览 - 五感测试核心功能一览",
+      "subtitle": "滑动浏览，发现五感测试如何帮助您高效实现健康改善"
+    },
+    "pricing": {
+      "title": "超值定价，核心功能触手可及！",
+      "subtitle": "多种灵活套餐，满足不同需求，总有一款适合您！立即选择最适合您的套餐，开启健康提升之旅！",
+      "basic": {
+        "title": "基础体验",
+        "price": "¥199",
+        "originalPrice": "¥299",
+        "features": [
+          "完整五感测试及分析报告",
+          "基础版五音或五色疗愈方案（PDF）",
+          "5段定制疗愈音乐/色彩冥想指导"
+        ]
+      },
+      "professional": {
+        "title": "专业提升",
+        "price": "¥499",
+        "originalPrice": "¥799",
+        "tag": "最受欢迎",
+        "features": [
+          "完整五感测试及详细分析报告",
+          "高级版五音或五色疗愈方案（PDF）",
+          "12段定制疗愈音乐/色彩冥想指导",
+          "专家一对一咨询（2次）",
+          "季度进展评估（1次）"
+        ]
+      },
+      "vip": {
+        "title": "尊享VIP",
+        "price": "¥999",
+        "originalPrice": "¥1599",
+        "payment": "一次性付款 或 ¥333×3期",
+        "features": [
+          "完整五感测试及专家深度分析报告",
+          "定制全方位五音五色综合疗愈方案",
+          "30段定制疗愈音乐/色彩冥想指导",
+          "专家一对一咨询（6次）",
+          "季度进展评估（4次）",
+          "高级疗愈指导视频（20课时）"
+        ]
+      },
+      "guarantee": {
+        "title": "100%满意保证",
+        "description": "我们对五感测试和疗愈方案的效果充满信心。如果您在30天内对测试结果或疗愈效果不满意，我们将全额退款，无需任何理由。",
+        "tag": "30天无忧退款保证"
+      }
+    },
+    "faq": {
+      "title": "常见问题解答",
+      "q1": "五感测试的准确度如何？",
+      "a1": "我们的五感测试基于大量科学研究和中医理论设计，通过数千名用户的验证，准确率超过95%。测试采用多维度评估方法，确保结果的可靠性和稳定性。",
+      "q2": "五音五色疗愈方案多久能见效？",
+      "a2": "大多数用户在坚持使用2-4周后开始感受到明显效果。轻度问题（如轻微焦虑、睡眠质量下降）通常2周内就能改善，而慢性问题（如长期压力、情绪波动）则需要1-3个月的持续实践。",
+      "q3": "我需要专业的音乐或艺术背景吗？",
+      "a3": "完全不需要。我们的五音五色疗愈方案设计得简单易行，适合所有人使用，不需要任何音乐或艺术背景。方案中会有详细的引导和说明，确保您能轻松上手。",
+      "q4": "如果我同时对音乐和颜色都敏感怎么办？",
+      "a4": "这很正常！许多人同时具备对音乐和颜色的敏感性，只是程度不同。我们的测试会评估哪种感官敏感度更强，并优先推荐相应的疗愈方案。高级套餐中，我们会提供五音五色综合疗愈方案，同时照顾到您的多种感官敏感性。",
+      "q5": "五音五色疗愈方案每天需要花多少时间？",
+      "a5": "基础的疗愈练习每天只需10-15分钟，适合忙碌的现代人。您可以灵活安排在早晨起床后或晚上睡前进行。针对特定健康目标的强化练习可能需要20-30分钟，但频率可以根据个人情况调整。",
+      "q6": "购买后如果我有疑问，可以获得支持吗？",
+      "a6": "当然可以。所有套餐都包含电子邮件支持服务，专业和尊享VIP套餐还包含一对一专家咨询服务。我们的专业团队会及时解答您在实践过程中遇到的任何问题，确保您获得最佳疗愈效果。"
+    },
+    "waitlist": {
+      "title": "抢先体验内测资格，赢在起跑线！",
+      "subtitle": "加入五感测试独家内测等待列表，第一时间获取内测邀请码，限量福利，和专属优惠！名额有限，立即加入！",
+      "placeholder": "请输入您的邮箱地址",
+      "button": "加入等待列表"
+    },
+    "youtube": {
+      "title": "用户真实案例 - 看五感测试如何助力健康关注者实现平衡",
+      "subtitle": "观看我们的视频，了解真实用户体验和疗愈效果"
+    },
+    "twitter": {
+      "title": "用户口碑 - Twitter实时热议五感测试的核心优势",
+      "subtitle": "看看用户们如何评价他们的疗愈之旅"
+    },
+    "finalCta": {
+      "title": "开始您的个性化中医疗愈之旅",
+      "subtitle": "发现您的天赋感官，获取专属疗愈方案，让五音五色的力量为您的身心健康带来改变",
+      "button1": "立即开始免费测试",
+      "button2": "查看服务套餐"
+    },
+    "footer": {
+      "company": "五感测试 | 中医疗愈",
+      "description": "发现您的天赋感官，开启个性化疗愈之旅",
+      "nav": "导航",
+      "contact": "联系我们",
+      "email": "support@wugance.com",
+      "phone": "400-888-9999",
+      "address": "北京市朝阳区健康路88号中医大厦15层",
+      "subscribe": "订阅资讯",
+      "subscribeText": "订阅我们的电子报，获取五音五色疗愈的最新研究和实践指南",
+      "placeholder": "您的邮箱地址",
+      "button": "订阅",
+      "copyright": " 2023 五感测试 | 中医疗愈. 保留所有权利.",
+      "disclaimer": "本网站内容仅供参考，不构成医疗建议，如有健康问题请咨询专业医生。",
+      "privacy": "隐私政策",
+      "terms": "服务条款",
+      "contact_us": "联系我们",
+      "language": "语言"
+    }
+  },
+  "app": {
+    "testStart": {
+      "title": "准备好发现您的天赋感官了吗？",
+      "description": "这个测试将评估您对音乐和颜色的敏感度，测试时间约5分钟",
+      "features": [
+        "测试包含音乐与颜色敏感度评估",
+        "获取详细的天赋感官分析",
+        "领取个性化中医五音或五色疗愈方案"
+      ],
+      "button": "开始测试"
+    },
+    "musicTest": {
+      "title": "音乐敏感度测试",
+      "instruction": "请聆听以下五种音乐片段，并为每种音乐对您的情绪影响程度评分（1-5分）",
+      "question1": "1. 角音（木）- 疏泄清悠",
+      "question2": "2. 徵音（火）- 昂扬奋进",
+      "question3": "3. 宫音（土）- 中正平和",
+      "question4": "4. 商音（金）- 清亮肃穆",
+      "question5": "5. 羽音（水）- 沉静深远",
+      "ratingQuestion": "这段音乐让您感到放松和舒适的程度是？",
+      "ratingWeak": "很弱",
+      "ratingStrong": "很强",
+      "prev": "上一步",
+      "next": "下一步"
+    },
+    "colorTest": {
+      "title": "颜色敏感度测试",
+      "instruction": "请观察以下五种颜色，并为每种颜色对您的情绪影响程度评分（1-5分）",
+      "question1": "1. 青色（木）- 生发向上",
+      "question2": "2. 赤色（火）- 热烈奔放",
+      "question3": "3. 黄色（土）- 中和稳定",
+      "question4": "4. 白色（金）- 清肃收敛",
+      "question5": "5. 黑色（水）- 深沉内敛",
+      "ratingQuestion": "这种颜色让您感到舒适和愉悦的程度是？",
+      "ratingWeak": "很弱",
+      "ratingStrong": "很强",
+      "prev": "上一步",
+      "next": "下一步"
+    },
+    "analyzing": {
+      "title": "正在分析您的测试结果...",
+      "description": "我们的AI正在分析您的感官敏感度数据，请稍候片刻"
+    },
+    "result": {
+      "title": "测试完成！发现您的天赋感官",
+      "description": "基于您的测试结果，我们发现您的天赋感官是：",
+      "talent": "颜色敏感型",
+      "analysis": "您的感官敏感度分析",
+      "musicSensitivity": "音乐敏感度：",
+      "colorSensitivity": "颜色敏感度：",
+      "recommendation": "专属建议",
+      "recommendationText": "作为颜色敏感型的您，中医五色疗法将是最适合您的疗愈方式。我们建议您：",
+      "recommendations": [
+        "在居家和工作环境中引入更多绿色和蓝色元素，帮助调节情绪",
+        "尝试色彩冥想，每天5-10分钟，提升能量和专注力",
+        "选择适合您的五色食疗方案，增强身体健康",
+        "配合光疗仪器，进行更深层次的五色疗愈"
+      ],
+      "cta": "想要获取完整的五感分析报告和专业定制疗愈方案吗？",
+      "button": "查看服务套餐"
+    },
+    "nav": {
+      "home": "首页",
+      "test": "测试",
+      "profile": "我的",
+      "settings": "设置"
+    },
+    "profile": {
+      "title": "我的",
+      "userName": "李晓华",
+      "memberSince": "会员加入时间：2023年10月",
+      "userType": "颜色敏感型",
+      "plan": "专业会员",
+      "testHistory": "测试历史",
+      "healingPlans": "我的疗愈方案",
+      "progress": "健康进度追踪",
+      "subscription": "订阅管理",
+      "notifications": "通知设置",
+      "privacy": "隐私设置",
+      "help": "帮助与支持",
+      "logout": "退出登录"
+    },
+    "settings": {
+      "title": "设置",
+      "general": "通用设置",
+      "language": "语言",
+      "notifications": "推送通知",
+      "darkMode": "深色模式",
+      "account": "账户设置",
+      "profile": "个人资料",
+      "privacy": "隐私设置",
+      "payment": "支付方式",
+      "app": "应用设置",
+      "autoDownload": "自动下载资源",
+      "sound": "声音效果",
+      "location": "位置服务",
+      "about": "关于",
+      "appInfo": "应用信息",
+      "terms": "使用条款"
+    },
+    "exercise": {
+      "title": "每日练习",
+      "todaySummary": "今日练习概览",
+      "progress": "完成进度",
+      "started": "已开始",
+      "completed": "已完成",
+      "recommendedExercises": "推荐练习",
+      "colorMeditation": "五色冥想",
+      "colorMeditationDesc": "10分钟色彩冥想，提升专注力和情绪平衡",
+      "musicTherapy": "五音疗愈",
+      "musicTherapyDesc": "15分钟音乐疗愈，改善睡眠质量",
+      "breathingExercise": "呼吸练习",
+      "breathingExerciseDesc": "5分钟呼吸练习，快速缓解压力",
+      "foodTherapy": "五色食疗",
+      "foodTherapyDesc": "今日健康食谱，增强免疫力",
+      "lightTherapy": "光疗练习",
+      "lightTherapyDesc": "20分钟专业光疗，调节生物钟",
+      "new": "新推荐",
+      "premiumFeature": "高级功能",
+      "alreadyCompleted": "已完成",
+      "startExercise": "开始练习",
+      "checkRecipe": "查看食谱",
+      "unlockPremium": "升级解锁"
+    },
+    "healing": {
+      "title": "疗愈方案",
+      "currentPlan": "当前方案：五色疗愈",
+      "planStartDate": "开始于：2023年11月10日",
+      "planProgress": "方案进度",
+      "daysCompleted": "已完成天数",
+      "daysRemaining": "剩余天数",
+      "consistency": "坚持率",
+      "todayExercise": "今日练习",
+      "planDetails": "方案详情",
+      "overview": "方案概览",
+      "planDescription": "基于您的五感测试结果，我们为您精心定制了五色疗愈方案。该方案通过有针对性的色彩冥想、环境调整和视觉疗愈，帮助您改善情绪平衡、提升专注力和睡眠质量。",
+      "keyComponents": "核心组成",
+      "component1": "每日10分钟色彩冥想练习",
+      "component2": "环境色彩优化建议",
+      "component3": "五色食疗指导",
+      "component4": "专业光疗课程（高级会员）",
+      "component5": "情绪调节色彩指南",
+      "benefits": "预期效果",
+      "benefit1": "显著改善睡眠质量（2-3周）",
+      "benefit2": "减轻焦虑和压力（1-2周）",
+      "benefit3": "提升专注力和工作效率（2-4周）",
+      "benefit4": "改善整体情绪状态（持续改善）",
+      "healthTracking": "健康追踪",
+      "sleepQuality": "睡眠质量",
+      "stressLevel": "压力水平",
+      "focus": "专注力",
+      "moodStability": "情绪稳定性",
+      "expertConsultation": "专家咨询",
+      "consultationDesc": "获取一对一专家指导，优化您的疗愈方案，解答专业问题",
+      "bookSession": "预约咨询"
+    },
+    "stats": {
+      "title": "健康统计",
+      "week": "周",
+      "month": "月",
+      "year": "年",
+      "completedSessions": "已完成练习",
+      "streakDays": "连续练习天数",
+      "totalMinutes": "总练习时长(分钟)",
+      "averageRating": "平均反馈评分",
+      "activityTrend": "练习活动趋势",
+      "goalsProgress": "目标进度",
+      "sleepImprovement": "睡眠改善",
+      "focusEnhancement": "专注力提升",
+      "stressReduction": "压力减轻",
+      "moodImprovement": "情绪提升",
+      "immunityBoost": "免疫力提升",
+      "downloadReport": "下载月度健康报告"
+    },
+    "nav": {
+      "home": "首页",
+      "test": "测试",
+      "profile": "我的",
+      "settings": "设置",
+      "exercise": "练习",
+      "healing": "疗愈",
+      "stats": "统计",
+      "knowledge": "知识库"
+    },
+    "knowledge": {
+      "title": "知识库",
+      "searchPlaceholder": "搜索五行理论知识...",
+      "allCategory": "全部",
+      "fiveElementsTheory": "五行理论",
+      "soundTherapy": "五音疗法",
+      "colorTherapy": "五色疗法",
+      "practicalGuides": "实用指南",
+      "featuredLabel": "精选文章",
+      "featuredTitle": "中医五行理论与现代健康生活的结合",
+      "featuredDescription": "探索古老五行理论如何在当代生活中应用，从饮食、环境到情绪管理的全方位指南。",
+      "latestArticles": "最新文章",
+      "soundTherapyTag": "五音疗法",
+      "soundArticleTitle": "五音对应五脏：古典音乐疗愈指南",
+      "soundArticleDescription": "探索角、徵、宫、商、羽五音如何影响肝、心、脾、肺、肾五脏健康的传统智慧。",
+      "colorTherapyTag": "五色疗法",
+      "colorArticleTitle": "五色之美：色彩在中医养生中的应用",
+      "colorArticleDescription": "从衣食住行到环境布置，如何利用青赤黄白黑五色调节身心平衡。",
+      "theoryTag": "五行理论",
+      "seasonArticleTitle": "顺应自然：五行与四季养生法则",
+      "seasonArticleDescription": "如何根据春、夏、长夏、秋、冬五季特点，调整生活习惯以保持健康。",
+      "readMore": "阅读全文",
+      "viewAll": "查看全部文章"
+    }
+  }
+}

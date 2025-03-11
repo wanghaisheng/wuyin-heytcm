@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="app.exercise.title">每日练习 - 五感测试</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #5D4037;
+            --secondary-color: #D32F2F;
+            --accent-color-1: #FFC107;
+            --accent-color-2: #B3E5FC;
+            --accent-color-3: #BDBDBD;
+            --background-light: #F9F5F0;
+            --text-dark: #2D2D2D;
+            --text-light: #FFFFFF;
+            --cta-color: #D32F2F;
+            --success-color: #4CAF50;
+        }
+        
+        body {
+            font-family: "Noto Sans SC", "Heiti SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .ios-status-bar {
+            height: 20px;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .ios-status-bar .time {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .ios-status-bar .icons {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .app-header {
+            background-color: white;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .main-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .ios-tab-bar {
+            height: 70px;
+            background-color: rgba(248, 248, 248, 0.9);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .tab-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #8e8e93;
+            font-size: 10px;
+            padding: 5px 0;
+        }
+        
+        .tab-item.active {
+            color: var(--cta-color);
+        }
+        
+        .tab-item i {
+            font-size: 22px;
+            margin-bottom: 3px;
+        }
+        
+        .exercise-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 16px;
+        }
+        
+        .exercise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .progress-container {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+        
+        .cta-button {
+            background-color: var(--cta-color);
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            transform: scale(1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body>
+    <!-- iOS Status Bar -->
+    <div class="ios-status-bar">
+        <div>9:41</div>
+        <div class="time"></div>
+        <div class="icons">
+            <i class="fas fa-signal"></i>
+            <i class="fas fa-wifi"></i>
+            <i class="fas fa-battery-full"></i>
+        </div>
+    </div>
+    
+    <!-- App Header -->
+    <div class="app-header">
+        <h1 class="text-lg font-bold" data-i18n="app.exercise.title">每日练习</h1>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Today's Exercise Summary -->
+        <div class="bg-white p-6 rounded-lg shadow-sm mb-6">
+            <h2 class="text-xl font-bold mb-2" data-i18n="app.exercise.todaySummary">今日练习概览</h2>
+            <div class="flex items-center justify-between mb-2">
+                <span class="text-gray-600" data-i18n="app.exercise.progress">完成进度</span>
+                <span class="font-semibold">2/5</span>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 40%;"></div>
+            </div>
+            <div class="flex justify-between text-sm text-gray-500 mt-1">
+                <span data-i18n="app.exercise.started">已开始</span>
+                <span data-i18n="app.exercise.completed">已完成</span>
+            </div>
+        </div>
+        
+        <!-- Exercise Cards -->
+        <h3 class="text-lg font-semibold mb-4" data-i18n="app.exercise.recommendedExercises">推荐练习</h3>
+        
+        <!-- Color Exercise Card -->
+        <div class="exercise-card">
+            <div class="h-40 bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center">
+                <i class="fas fa-palette text-white text-4xl"></i>
+            </div>
+            <div class="p-4">
+                <div class="flex justify-between items-center mb-2">
+                    <h4 class="font-semibold" data-i18n="app.exercise.colorMeditation">五色冥想</h4>
+                    <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full" data-i18n="app.exercise.completed">已完成</span>
+                </div>
+                <p class="text-sm text-gray-600 mb-3" data-i18n="app.exercise.colorMeditationDesc">10分钟色彩冥想，提升专注力和情绪平衡</p>
+                <button class="w-full bg-gray-200 text-gray-800 py-2 rounded-lg font-semibold">
+                    <i class="fas fa-check-circle mr-2"></i>
+                    <span data-i18n="app.exercise.alreadyCompleted">已完成</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Music Exercise Card -->
+        <div class="exercise-card">
+            <div class="h-40 bg-gradient-to-r from-purple-400 to-pink-500 flex items-center justify-center">
+                <i class="fas fa-music text-white text-4xl"></i>
+            </div>
+            <div class="p-4">
+                <div class="flex justify-between items-center mb-2">
+                    <h4 class="font-semibold" data-i18n="app.exercise.musicTherapy">五音疗愈</h4>
+                    <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full" data-i18n="app.exercise.completed">已完成</span>
+                </div>
+                <p class="text-sm text-gray-600 mb-3" data-i18n="app.exercise.musicTherapyDesc">15分钟音乐疗愈，改善睡眠质量</p>
+                <button class="w-full bg-gray-200 text-gray-800 py-2 rounded-lg font-semibold">
+                    <i class="fas fa-check-circle mr-2"></i>
+                    <span data-i18n="app.exercise.alreadyCompleted">已完成</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Breathing Exercise Card -->
+        <div class="exercise-card">
+            <div class="h-40 bg-gradient-to-r from-yellow-400 to-orange-500 flex items-center justify-center">
+                <i class="fas fa-wind text-white text-4xl"></i>
+            </div>
+            <div class="p-4">
+                <div class="flex justify-between items-center mb-2">
+                    <h4 class="font-semibold" data-i18n="app.exercise.breathingExercise">呼吸练习</h4>
+                    <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full" data-i18n="app.exercise.new">新推荐</span>
+                </div>
+                <p class="text-sm text-gray-600 mb-3" data-i18n="app.exercise.breathingExerciseDesc">5分钟呼吸练习，快速缓解压力</p>
+                <button class="w-full cta-button py-2 rounded-lg font-semibold">
+                    <i class="fas fa-play-circle mr-2"></i>
+                    <span data-i18n="app.exercise.startExercise">开始练习</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Food Therapy Card -->
+        <div class="exercise-card">
+            <div class="h-40 bg-gradient-to-r from-red-400 to-red-600 flex items-center justify-center">
+                <i class="fas fa-utensils text-white text-4xl"></i>
+            </div>
+            <div class="p-4">
+                <div class="flex justify-between items-center mb-2">
+                    <h4 class="font-semibold" data-i18n="app.exercise.foodTherapy">五色食疗</h4>
+                    <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full" data-i18n="app.exercise.new">新推荐</span>
+                </div>
+                <p class="text-sm text-gray-600 mb-3" data-i18n="app.exercise.foodTherapyDesc">今日健康食谱，增强免疫力</p>
+                <button class="w-full cta-button py-2 rounded-lg font-semibold">
+                    <i class="fas fa-play-circle mr-2"></i>
+                    <span data-i18n="app.exercise.checkRecipe">查看食谱</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Light Therapy Card -->
+        <div class="exercise-card">
+            <div class="h-40 bg-gradient-to-r from-blue-400 to-indigo-500 flex items-center justify-center">
+                <i class="fas fa-lightbulb text-white text-4xl"></i>
+            </div>
+            <div class="p-4">
+                <div class="flex justify-between items-center mb-2">
+                    <h4 class="font-semibold" data-i18n="app.exercise.lightTherapy">光疗练习</h4>
+                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full" data-i18n="app.exercise.premiumFeature">高级功能</span>
+                </div>
+                <p class="text-sm text-gray-600 mb-3" data-i18n="app.exercise.lightTherapyDesc">20分钟专业光疗，调节生物钟</p>
+                <button class="w-full bg-gray-100 text-gray-800 border border-gray-300 py-2 rounded-lg font-semibold">
+                    <i class="fas fa-crown mr-2 text-yellow-500"></i>
+                    <span data-i18n="app.exercise.unlockPremium">升级解锁</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Tab Bar -->
+    <div class="ios-tab-bar">
+        <a href="home.html" class="tab-item">
+            <i class="fas fa-home"></i>
+            <span data-i18n="app.nav.home">首页</span>
+        </a>
+        <a href="exercise.html" class="tab-item active">
+            <i class="fas fa-dumbbell"></i>
+            <span data-i18n="app.nav.exercise">练习</span>
+        </a>
+        <a href="healing.html" class="tab-item">
+            <i class="fas fa-heartbeat"></i>
+            <span data-i18n="app.nav.healing">疗愈</span>
+        </a>
+        <a href="stats.html" class="tab-item">
+            <i class="fas fa-chart-bar"></i>
+            <span data-i18n="app.nav.stats">统计</span>
+        </a>
+        <a href="knowledge.html" class="tab-item">
+            <i class="fas fa-book"></i>
+            <span data-i18n="app.nav.knowledge">知识库</span>
+        </a>
+    </div>
+    
+    <!-- Load JavaScript -->
+    <script src="i18n.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

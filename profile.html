@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="app.profile.title">我的 - 五感测试</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #5D4037;
+            --secondary-color: #D32F2F;
+            --accent-color-1: #FFC107;
+            --accent-color-2: #B3E5FC;
+            --accent-color-3: #BDBDBD;
+            --background-light: #F9F5F0;
+            --text-dark: #2D2D2D;
+            --text-light: #FFFFFF;
+            --cta-color: #D32F2F;
+            --success-color: #4CAF50;
+        }
+        
+        body {
+            font-family: "Noto Sans SC", "Heiti SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .ios-status-bar {
+            height: 20px;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .ios-status-bar .time {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .ios-status-bar .icons {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .app-header {
+            background-color: white;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .main-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .ios-tab-bar {
+            height: 70px;
+            background-color: rgba(248, 248, 248, 0.9);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .tab-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #8e8e93;
+            font-size: 10px;
+            padding: 5px 0;
+        }
+        
+        .tab-item.active {
+            color: var(--cta-color);
+        }
+        
+        .tab-item i {
+            font-size: 22px;
+            margin-bottom: 3px;
+        }
+        
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            border-bottom: 1px solid #eee;
+            background-color: white;
+        }
+        
+        .menu-item i {
+            font-size: 20px;
+            width: 30px;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- iOS Status Bar -->
+    <div class="ios-status-bar">
+        <div>9:41</div>
+        <div class="time"></div>
+        <div class="icons">
+            <i class="fas fa-signal"></i>
+            <i class="fas fa-wifi"></i>
+            <i class="fas fa-battery-full"></i>
+        </div>
+    </div>
+    
+    <!-- App Header -->
+    <div class="app-header">
+        <h1 class="text-lg font-bold" data-i18n="app.profile.title">我的</h1>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Profile Header -->
+        <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-sm mb-6">
+            <div class="profile-avatar mb-4 flex items-center justify-center overflow-hidden">
+                <svg viewBox="0 0 24 24" fill="#A0AEC0" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                    <path d="M12 14.5C13.6569 14.5 15 13.1569 15 11.5C15 9.84315 13.6569 8.5 12 8.5C10.3431 8.5 9 9.84315 9 11.5C9 13.1569 10.3431 14.5 12 14.5Z"/>
+                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 5C13.66 5 15 6.34 15 8C15 9.66 13.66 11 12 11C10.34 11 9 9.66 9 8C9 6.34 10.34 5 12 5ZM12 19.2C9.5 19.2 7.29 17.92 6 15.98C6.03 13.99 10 12.9 12 12.9C13.99 12.9 17.97 13.99 18 15.98C16.71 17.92 14.5 19.2 12 19.2Z"/>
+                </svg>
+            </div>
+            <h2 class="text-xl font-bold mb-1" data-i18n="app.profile.userName">李晓华</h2>
+            <p class="text-gray-600 mb-4" data-i18n="app.profile.memberSince">会员加入时间：2023年10月</p>
+            <div class="flex space-x-2">
+                <div class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                    <span data-i18n="app.profile.userType">颜色敏感型</span>
+                </div>
+                <div class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+                    <span data-i18n="app.profile.plan">专业会员</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Profile Menu -->
+        <div class="rounded-lg overflow-hidden shadow-sm mb-6">
+            <div class="menu-item">
+                <i class="fas fa-history"></i>
+                <span class="ml-4" data-i18n="app.profile.testHistory">测试历史</span>
+                <i class="fas fa-chevron-right ml-auto text-gray-400"></i>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-clipboard-list"></i>
+                <span class="ml-4" data-i18n="app.profile.healingPlans">我的疗愈方案</span>
+                <i class="fas fa-chevron-right ml-auto text-gray-400"></i>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-chart-line"></i>
+                <span class="ml-4" data-i18n="app.profile.progress">健康进度追踪</span>
+                <i class="fas fa-chevron-right ml-auto text-gray-400"></i>
+            </div>
+        </div>
+        
+        <div class="rounded-lg overflow-hidden shadow-sm mb-6">
+            <div class="menu-item">
+                <i class="fas fa-credit-card"></i>
+                <span class="ml-4" data-i18n="app.profile.subscription">订阅管理</span>
+                <i class="fas fa-chevron-right ml-auto text-gray-400"></i>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-bell"></i>
+                <span class="ml-4" data-i18n="app.profile.notifications">通知设置</span>
+                <i class="fas fa-chevron-right ml-auto text-gray-400"></i>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-lock"></i>
+                <span class="ml-4" data-i18n="app.profile.privacy">隐私设置</span>
+                <i class="fas fa-chevron-right ml-auto text-gray-400"></i>
+            </div>
+        </div>
+        
+        <div class="rounded-lg overflow-hidden shadow-sm">
+            <div class="menu-item">
+                <i class="fas fa-question-circle"></i>
+                <span class="ml-4" data-i18n="app.profile.help">帮助与支持</span>
+                <i class="fas fa-chevron-right ml-auto text-gray-400"></i>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-sign-out-alt"></i>
+                <span class="ml-4 text-red-500" data-i18n="app.profile.logout">退出登录</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Tab Bar -->
+    <div class="ios-tab-bar">
+        <a href="home.html" class="tab-item">
+            <i class="fas fa-home"></i>
+            <span data-i18n="app.nav.home">首页</span>
+        </a>
+        <a href="exercise.html" class="tab-item">
+            <i class="fas fa-dumbbell"></i>
+            <span data-i18n="app.nav.exercise">练习</span>
+        </a>
+        <a href="healing.html" class="tab-item">
+            <i class="fas fa-heartbeat"></i>
+            <span data-i18n="app.nav.healing">疗愈</span>
+        </a>
+        <a href="stats.html" class="tab-item">
+            <i class="fas fa-chart-bar"></i>
+            <span data-i18n="app.nav.stats">统计</span>
+        </a>
+        <a href="profile.html" class="tab-item active">
+            <i class="fas fa-user"></i>
+            <span data-i18n="app.nav.profile">我的</span>
+        </a>
+    </div>
+    
+    <!-- Load JavaScript -->
+    <script src="i18n.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

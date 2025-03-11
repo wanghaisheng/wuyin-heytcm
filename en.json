@@ -1,0 +1,367 @@
+{
+  "landingPage": {
+    "hero": {
+      "title": "Discover Your Sensory Talent, Begin Your Personalized Healing Journey",
+      "subtitle": "Professional Five Senses Test, Customized Chinese Medicine Sound and Color Healing",
+      "description": "Everyone has a unique sensory talent. Are you more sensitive to music or colors? Our test will help you discover your gifted sense and provide a personalized Chinese medicine five-tone or five-color healing plan.",
+      "cta": "Start Free Test"
+    },
+    "problem": {
+      "title": "Struggling with Stress and Health Issues? You're Not Alone!",
+      "painPoint": "Ineffective healing methods not only waste time but also prevent you from achieving optimal health and balance.",
+      "solution": "Five Senses Test is tailored for you, solving your health concerns with one click, helping you achieve balance through personalized healing."
+    },
+    "features": {
+      "title": "Core Features That Transform Your Health Journey",
+      "feature1": {
+        "title": "Scenario 1: Stress Relief - Discover Your Sensory Talent",
+        "description": "Our professional assessment identifies whether you're more responsive to music or colors, guiding your perfect healing path."
+      },
+      "feature2": {
+        "title": "Scenario 2: Personalized Healing - Tailored Five-Tone or Five-Color Therapy",
+        "description": "Receive a customized healing plan based on your sensory talent, targeting your specific health needs."
+      },
+      "feature3": {
+        "title": "Scenario 3: Daily Practice - Simple and Effective Healing Routines",
+        "description": "Just 15 minutes daily with our guided healing resources delivers remarkable improvements to your wellbeing."
+      }
+    },
+    "value": {
+      "title": "Five Senses Test - The Ultimate Tool for Health-Conscious Individuals!",
+      "subtitle": "We're dedicated to helping health-conscious individuals achieve 70% stress reduction and 80% better sleep quality through ancient wisdom and modern science."
+    },
+    "testimonials": {
+      "title": "Trusted by Over 10,000 Users!",
+      "testimonial1": {
+        "name": "Li, Teacher",
+        "type": "Music Sensitive",
+        "text": "After discovering I'm music-sensitive, my sleep quality improved dramatically. I now fall asleep within minutes instead of hours.",
+        "result": "Used sound healing for 4 months, sleep quality improved 80%"
+      },
+      "testimonial2": {
+        "name": "Zhang, IT Engineer",
+        "type": "Color Sensitive",
+        "text": "The test was incredibly accurate! I've adjusted my office and home environment based on the color healing plan, and my work stress has decreased significantly.",
+        "result": "Used color healing for 6 months, work efficiency improved 65%"
+      }
+    },
+    "howItWorks": {
+      "title": "Easy to Use, Master in Three Steps!",
+      "step1": "Complete the Five Senses Test",
+      "step1_desc": "Through our interactive test, measure your sensitivity to music and colors",
+      "step2": "Get Your Sensory Talent Analysis",
+      "step2_desc": "Our system analyzes your responses to determine whether you're more sensitive to music or colors",
+      "step3": "Receive Your Healing Plan",
+      "step3_desc": "Based on your sensory talent, we provide a personalized Chinese medicine five-tone or five-color healing plan",
+      "step4": "Begin Your Healing Journey",
+      "step4_desc": "Follow professional guidance to easily practice your personalized healing plan at home and improve your health"
+    },
+    "preview": {
+      "title": "Exclusive Preview - Five Senses Test Core Features",
+      "subtitle": "Swipe to explore how Five Senses Test helps you achieve better health efficiently"
+    },
+    "pricing": {
+      "title": "Exceptional Value, Core Features at Your Fingertips!",
+      "subtitle": "Multiple flexible packages to meet different needs. Choose the package that's right for you and start your health improvement journey!",
+      "basic": {
+        "title": "Basic Experience",
+        "price": "¥199",
+        "originalPrice": "¥299",
+        "features": [
+          "Complete Five Senses Test and Analysis Report",
+          "Basic Five-Tone or Five-Color Healing Plan (PDF)",
+          "5 Customized Healing Music/Color Meditation Guides"
+        ]
+      },
+      "professional": {
+        "title": "Professional Enhancement",
+        "price": "¥499",
+        "originalPrice": "¥799",
+        "tag": "Most Popular",
+        "features": [
+          "Complete Five Senses Test and Detailed Analysis Report",
+          "Advanced Five-Tone or Five-Color Healing Plan (PDF)",
+          "12 Customized Healing Music/Color Meditation Guides",
+          "Expert One-on-One Consultation (2 sessions)",
+          "Quarterly Progress Assessment (1 time)"
+        ]
+      },
+      "vip": {
+        "title": "VIP Experience",
+        "price": "¥999",
+        "originalPrice": "¥1599",
+        "payment": "One-time payment or ¥333×3 installments",
+        "features": [
+          "Complete Five Senses Test and Expert In-depth Analysis Report",
+          "Customized Comprehensive Five-Tone Five-Color Healing Plan",
+          "30 Customized Healing Music/Color Meditation Guides",
+          "Expert One-on-One Consultation (6 sessions)",
+          "Quarterly Progress Assessment (4 times)",
+          "Advanced Healing Guidance Videos (20 hours)"
+        ]
+      },
+      "guarantee": {
+        "title": "100% Satisfaction Guarantee",
+        "description": "We're confident in the effectiveness of our Five Senses Test and healing plans. If you're not satisfied with the test results or healing effects within 30 days, we'll refund your payment in full, no questions asked.",
+        "tag": "30-Day Worry-Free Refund Guarantee"
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "How accurate is the Five Senses Test?",
+      "a1": "Our Five Senses Test is designed based on extensive scientific research and Chinese medicine theory, validated by thousands of users with an accuracy rate exceeding 95%. The test employs a multi-dimensional assessment method to ensure reliability and stability of results.",
+      "q2": "How soon will I see effects from the five-tone or five-color healing plan?",
+      "a2": "Most users begin to experience noticeable effects after consistently using the plan for 2-4 weeks. Minor issues (such as mild anxiety, decreased sleep quality) typically improve within 2 weeks, while chronic issues (such as long-term stress, mood swings) may require 1-3 months of continued practice.",
+      "q3": "Do I need a professional music or art background?",
+      "a3": "Not at all. Our five-tone and five-color healing plans are designed to be simple and accessible for everyone, regardless of music or art background. The plans include detailed guidance and instructions to ensure you can easily get started.",
+      "q4": "What if I'm sensitive to both music and colors?",
+      "a4": "This is completely normal! Many people have sensitivity to both music and colors, just to different degrees. Our test will assess which sensory sensitivity is stronger and prioritize the corresponding healing plan. In our advanced packages, we provide comprehensive five-tone and five-color healing plans to address multiple sensory sensitivities.",
+      "q5": "How much time does the five-tone or five-color healing plan require daily?",
+      "a5": "Basic healing exercises only require 10-15 minutes daily, suitable for busy modern individuals. You can flexibly arrange to do them after waking up in the morning or before bed at night. Intensive exercises for specific health goals may require 20-30 minutes, but the frequency can be adjusted according to individual circumstances.",
+      "q6": "Can I get support if I have questions after purchase?",
+      "a6": "Absolutely. All packages include email support services, and the Professional and VIP packages also include one-on-one expert consultation services. Our professional team will promptly address any questions you encounter during practice to ensure you achieve the best healing effects."
+    },
+    "waitlist": {
+      "title": "Get Early Access, Win at the Starting Line!",
+      "subtitle": "Join the exclusive Five Senses Test beta testing waitlist to be the first to receive beta invitation codes, limited benefits, and exclusive discounts! Limited spots available, join now!",
+      "placeholder": "Enter your email address",
+      "button": "Join Waitlist"
+    },
+    "youtube": {
+      "title": "Real User Cases - See How Five Senses Test Helps Health-Conscious Individuals Achieve Balance",
+      "subtitle": "Watch our videos to see real user experiences and healing results"
+    },
+    "twitter": {
+      "title": "User Reviews - Real-time Twitter Discussions About Five Senses Test Benefits",
+      "subtitle": "See what users are saying about their healing journey"
+    },
+    "finalCta": {
+      "title": "Begin Your Personalized Chinese Medicine Healing Journey",
+      "subtitle": "Discover your sensory talent, get your personalized healing plan, and let the power of five tones and five colors transform your health",
+      "button1": "Start Free Test",
+      "button2": "View Service Packages"
+    },
+    "footer": {
+      "company": "Five Senses Test | Chinese Medicine Healing",
+      "description": "Discover your sensory talent, begin your personalized healing journey",
+      "nav": "Navigation",
+      "contact": "Contact Us",
+      "email": "support@wugance.com",
+      "phone": "400-888-9999",
+      "address": "Floor 15, Chinese Medicine Building, 88 Health Road, Chaoyang District, Beijing",
+      "subscribe": "Subscribe to Newsletter",
+      "subscribeText": "Subscribe to our newsletter to receive the latest research and practical guides on five-tone and five-color healing",
+      "placeholder": "Your email address",
+      "button": "Subscribe",
+      "copyright": " 2023 Five Senses Test | Chinese Medicine Healing. All rights reserved.",
+      "disclaimer": "The content on this website is for reference only and does not constitute medical advice. If you have health concerns, please consult a professional doctor.",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "contact_us": "Contact Us",
+      "language": "Language"
+    }
+  },
+  "app": {
+    "testStart": {
+      "title": "Ready to discover your sensory talent?",
+      "description": "This test will evaluate your sensitivity to music and colors, taking approximately 5 minutes",
+      "features": [
+        "Test includes music and color sensitivity assessment",
+        "Get detailed analysis of your sensory talent",
+        "Receive personalized Chinese medicine five-tone or five-color healing plan"
+      ],
+      "button": "Start Test"
+    },
+    "musicTest": {
+      "title": "Music Sensitivity Test",
+      "instruction": "Please listen to the following five music clips and rate how each music affects your emotions (1-5 points)",
+      "question1": "1. Jiao Tone (Wood) - Clear and Flowing",
+      "question2": "2. Zhi Tone (Fire) - Uplifting and Energetic",
+      "question3": "3. Gong Tone (Earth) - Balanced and Harmonious",
+      "question4": "4. Shang Tone (Metal) - Clear and Solemn",
+      "question5": "5. Yu Tone (Water) - Deep and Serene",
+      "ratingQuestion": "How relaxed and comfortable does this music make you feel?",
+      "ratingWeak": "Very Weak",
+      "ratingStrong": "Very Strong",
+      "prev": "Previous",
+      "next": "Next"
+    },
+    "colorTest": {
+      "title": "Color Sensitivity Test",
+      "instruction": "Please observe the following five colors and rate how each color affects your emotions (1-5 points)",
+      "question1": "1. Green (Wood) - Growth and Upward",
+      "question2": "2. Red (Fire) - Passionate and Energetic",
+      "question3": "3. Yellow (Earth) - Stable and Balanced",
+      "question4": "4. White (Metal) - Clear and Contracting",
+      "question5": "5. Black (Water) - Deep and Introspective",
+      "ratingQuestion": "How comfortable and pleasant does this color make you feel?",
+      "ratingWeak": "Very Weak",
+      "ratingStrong": "Very Strong",
+      "prev": "Previous",
+      "next": "Next"
+    },
+    "analyzing": {
+      "title": "Analyzing your test results...",
+      "description": "Our AI is analyzing your sensory sensitivity data, please wait a moment"
+    },
+    "result": {
+      "title": "Test Complete! Discover Your Sensory Talent",
+      "description": "Based on your test results, we've discovered your sensory talent is:",
+      "talent": "Color Sensitive Type",
+      "analysis": "Your Sensory Sensitivity Analysis",
+      "musicSensitivity": "Music Sensitivity:",
+      "colorSensitivity": "Color Sensitivity:",
+      "recommendation": "Personalized Recommendation",
+      "recommendationText": "As a color-sensitive person, Chinese medicine five-color therapy will be the most suitable healing method for you. We recommend:",
+      "recommendations": [
+        "Introduce more green and blue elements in your home and work environment to help regulate emotions",
+        "Try color meditation for 5-10 minutes daily to enhance energy and focus",
+        "Choose a five-color diet plan suitable for you to enhance physical health",
+        "Use light therapy equipment for deeper five-color healing"
+      ],
+      "cta": "Want to get a complete five senses analysis report and professional customized healing plan?",
+      "button": "View Service Packages"
+    },
+    "exercise": {
+      "title": "Daily Exercise",
+      "todaySummary": "Today's Exercise Overview",
+      "progress": "Completion Progress",
+      "started": "Started",
+      "completed": "Completed",
+      "recommendedExercises": "Recommended Exercises",
+      "colorMeditation": "Five-Color Meditation",
+      "colorMeditationDesc": "10-minute color meditation to improve focus and emotional balance",
+      "musicTherapy": "Five-Tone Healing",
+      "musicTherapyDesc": "15-minute music therapy to improve sleep quality",
+      "breathingExercise": "Breathing Exercise",
+      "breathingExerciseDesc": "5-minute breathing exercise for quick stress relief",
+      "foodTherapy": "Five-Color Diet",
+      "foodTherapyDesc": "Today's healthy recipe to boost immunity",
+      "lightTherapy": "Light Therapy",
+      "lightTherapyDesc": "20-minute professional light therapy to regulate biological clock",
+      "new": "New",
+      "premiumFeature": "Premium Feature",
+      "alreadyCompleted": "Completed",
+      "startExercise": "Start Exercise",
+      "checkRecipe": "View Recipe",
+      "unlockPremium": "Upgrade to Unlock"
+    },
+    "healing": {
+      "title": "Healing Plan",
+      "currentPlan": "Current Plan: Five-Color Healing",
+      "planStartDate": "Started: November 10, 2023",
+      "planProgress": "Plan Progress",
+      "daysCompleted": "Days Completed",
+      "daysRemaining": "Days Remaining",
+      "consistency": "Consistency",
+      "todayExercise": "Today's Exercise",
+      "planDetails": "Plan Details",
+      "overview": "Plan Overview",
+      "planDescription": "Based on your Five Senses Test results, we've customized a Five-Color Healing plan for you. This plan helps improve emotional balance, focus, and sleep quality through targeted color meditation, environment adjustments, and visual therapy.",
+      "keyComponents": "Key Components",
+      "component1": "Daily 10-minute color meditation exercise",
+      "component2": "Environment color optimization suggestions",
+      "component3": "Five-Color diet guidance",
+      "component4": "Professional light therapy course (Premium members)",
+      "component5": "Emotional regulation color guide",
+      "benefits": "Expected Results",
+      "benefit1": "Significant improvement in sleep quality (2-3 weeks)",
+      "benefit2": "Reduced anxiety and stress (1-2 weeks)",
+      "benefit3": "Enhanced focus and work efficiency (2-4 weeks)",
+      "benefit4": "Improved overall emotional state (continuous improvement)",
+      "healthTracking": "Health Tracking",
+      "sleepQuality": "Sleep Quality",
+      "stressLevel": "Stress Level",
+      "focus": "Focus",
+      "moodStability": "Emotional Stability",
+      "expertConsultation": "Expert Consultation",
+      "consultationDesc": "Get one-on-one expert guidance, optimize your healing plan, and get professional answers",
+      "bookSession": "Book a Session"
+    },
+    "stats": {
+      "title": "Health Statistics",
+      "week": "Week",
+      "month": "Month",
+      "year": "Year",
+      "completedSessions": "Completed Sessions",
+      "streakDays": "Consecutive Days",
+      "totalMinutes": "Total Minutes",
+      "averageRating": "Average Rating",
+      "activityTrend": "Activity Trend",
+      "goalsProgress": "Goals Progress",
+      "sleepImprovement": "Sleep Improvement",
+      "focusEnhancement": "Focus Enhancement",
+      "stressReduction": "Stress Reduction",
+      "moodImprovement": "Mood Improvement",
+      "immunityBoost": "Immunity Boost",
+      "downloadReport": "Download Monthly Health Report"
+    },
+    "knowledge": {
+      "title": "Knowledge Base",
+      "searchPlaceholder": "Search five elements theory...",
+      "allCategory": "All",
+      "fiveElementsTheory": "Five Elements Theory",
+      "soundTherapy": "Sound Therapy",
+      "colorTherapy": "Color Therapy",
+      "practicalGuides": "Practical Guides",
+      "featuredLabel": "Featured",
+      "featuredTitle": "Traditional Chinese Five Elements Theory in Modern Health",
+      "featuredDescription": "Explore how ancient five elements theory can be applied in contemporary life, from diet and environment to emotional management.",
+      "latestArticles": "Latest Articles",
+      "soundTherapyTag": "Sound Therapy",
+      "soundArticleTitle": "Five Tones for Five Organs: Classical Music Healing Guide",
+      "soundArticleDescription": "Explore how Jiao, Zhi, Gong, Shang, and Yu tones affect the health of liver, heart, spleen, lung, and kidney according to traditional wisdom.",
+      "colorTherapyTag": "Color Therapy",
+      "colorArticleTitle": "Beauty of Five Colors: Color Applications in Chinese Health",
+      "colorArticleDescription": "From clothing, food, to environment design, how to use green, red, yellow, white, and black colors to balance body and mind.",
+      "theoryTag": "Five Elements Theory",
+      "seasonArticleTitle": "Follow Nature: Five Elements and Seasonal Wellness Rules",
+      "seasonArticleDescription": "How to adjust living habits according to the characteristics of spring, summer, late summer, autumn, and winter to maintain health.",
+      "readMore": "Read More",
+      "viewAll": "View All Articles"
+    },
+    "nav": {
+      "home": "Home",
+      "test": "Test",
+      "profile": "Profile",
+      "settings": "Settings",
+      "exercise": "Exercise",
+      "healing": "Healing",
+      "stats": "Stats",
+      "knowledge": "Knowledge"
+    },
+    "profile": {
+      "title": "Profile",
+      "userName": "Li Xiaohua",
+      "memberSince": "Member since: October 2023",
+      "userType": "Color Sensitive",
+      "plan": "Professional Member",
+      "testHistory": "Test History",
+      "healingPlans": "My Healing Plans",
+      "progress": "Health Progress Tracking",
+      "subscription": "Subscription Management",
+      "notifications": "Notification Settings",
+      "privacy": "Privacy Settings",
+      "help": "Help & Support",
+      "logout": "Logout"
+    },
+    "settings": {
+      "title": "Settings",
+      "general": "General Settings",
+      "language": "Language",
+      "notifications": "Push Notifications",
+      "darkMode": "Dark Mode",
+      "account": "Account Settings",
+      "profile": "Profile",
+      "privacy": "Privacy Settings",
+      "payment": "Payment Methods",
+      "app": "App Settings",
+      "autoDownload": "Auto-Download Resources",
+      "sound": "Sound Effects",
+      "location": "Location Services",
+      "about": "About",
+      "appInfo": "App Information",
+      "terms": "Terms of Service"
+    }
+  }
+}

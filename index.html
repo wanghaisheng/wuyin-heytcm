@@ -1,132 +1,1349 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="landingPage.meta.title">五感测试 - 发现您的天赋感官 | 个性化五音五色疗愈方案</title>
+    <meta name="description" content="通过专业五感测试，发现您是对音乐还是颜色更敏感，获取个性化的中医五音或五色疗愈方案，改善身心健康，提升生活质量。" data-i18n="landingPage.meta.description">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #5D4037; /* 木色/棕色 - 代表中医五行中的"木" */
+            --secondary-color: #D32F2F; /* 火色/红色 - 代表"火" */
+            --accent-color-1: #FFC107; /* 土色/黄色 - 代表"土" */
+            --accent-color-2: #B3E5FC; /* 水色/浅蓝 - 代表"水" */
+            --accent-color-3: #BDBDBD; /* 金色/银灰 - 代表"金" */
+            --background-light: #F9F5F0; /* 浅米色背景 */
+            --text-dark: #2D2D2D; /* 深色文本 */
+            --text-light: #FFFFFF; /* 浅色文本 */
+            --cta-color: #D32F2F; /* CTA按钮使用红色（火） */
+            --success-color: #4CAF50; /* 成功消息绿色 */
+        }
+        
+        body {
+            font-family: "Noto Sans SC", "Heiti SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-light);
+        }
+        
+        .cta-button {
+            background-color: var(--cta-color);
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            transform: scale(1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .test-button {
+            background-color: var(--accent-color-1);
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+        
+        .test-button:hover {
+            background-color: #FFD54F;
+        }
+        
+        .testimonial-card {
+            border-left: 4px solid var(--secondary-color);
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pricing-card {
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .popular-plan {
+            border: 2px solid var(--accent-color-1);
+            transform: scale(1.05);
+        }
+        
+        .popular-plan:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+        
+        .color-tile {
+            height: 100px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .color-tile:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .audio-container {
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .countdown {
+            background-color: var(--accent-color-1);
+            color: var(--text-dark);
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        
+        /* Progress bar style */
+        .progress-container {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        
+        .progress-bar {
+            height: 20px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 10px;
+            transition: width 0.3s ease;
+            position: relative;
+        }
+        
+        .result-container {
+            display: none;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        /* Media queries for responsive design */
+        @media (max-width: 768px) {
+            .popular-plan {
+                transform: scale(1);
+            }
+            
+            .popular-plan:hover {
+                transform: translateY(-5px);
+            }
+            
+            .pricing-card {
+                margin-bottom: 20px;
+            }
+        }
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="A mobile simulator designed to demonstrate mobile interface design.">
-  <meta name="keywords" content="mobile, simulator, mobile design, mobile app">
-  <meta name="author" content="Your Name or Company">
-  <meta http-equiv="Content-Language" content="en">
+        /* iPhone frame styling */
+        .iphone-frame {
+            position: relative;
+            width: 375px;
+            height: 812px;
+            border-radius: 40px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 20px auto;
+        }
 
-  <!-- Canonical Link -->
-  <link rel="canonical" href="https://www.yourwebsite.com/pc-simulator" />
+        .iphone-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 25px;
+            background-color: #000;
+            border-top-left-radius: 40px;
+            border-top-right-radius: 40px;
+            z-index: 10;
+        }
 
-  <!-- Open Graph for Social Media -->
-  <meta property="og:title" content="PC Simulator">
-  <meta property="og:description" content="A mobile simulator designed to demonstrate mobile interface design.">
-  <meta property="og:image" content="https://www.yourwebsite.com/pc-simulator-image.jpg">
-  <meta property="og:url" content="https://www.yourwebsite.com/pc-simulator">
-  <meta property="og:type" content="website">
+        .iphone-frame::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 25px;
+            background-color: #000;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            z-index: 10;
+        }
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="PC Simulator">
-  <meta name="twitter:description" content="A mobile simulator designed to demonstrate mobile interface design.">
-  <meta name="twitter:image" content="https://www.yourwebsite.com/pc-simulator-image.jpg">
-  <meta name="twitter:creator" content="@yourtwitterhandle">
+        .iphone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 160px;
+            height: 25px;
+            background-color: #000;
+            border-bottom-left-radius: 18px;
+            border-bottom-right-radius: 18px;
+            z-index: 11;
+        }
 
-  <!-- Favicon -->
-  <link rel="icon" href="https://www.yourwebsite.com/favicon.ico" type="image/x-icon">
+        .iphone-iframe {
+            width: 100%;
+            height: calc(100% - 50px);
+            margin-top: 25px;
+            border: none;
+        }
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'UA-XXXXX-Y');
-  </script>
+        /* Status bar styling for iOS */
+        .ios-status-bar {
+            height: 20px;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+            font-size: 12px;
+            font-weight: bold;
+        }
 
-  <!-- Microsoft Clarity -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y) {
-      window.clarity=window.clarity||function(){(clarity.q=clarity.q||[]).push(arguments)};
-      clarity('set', 'anonymizeIP', true);
-      i=l.createElement('script');i.async=1;i.src=r;i.type='text/javascript';
-      t=l.getElementsByTagName('script')[0];t.parentNode.insertBefore(i,t);
-    })(document,window,'script','https://www.clarity.ms/tag/XXXXXX');
-  </script>
+        .ios-status-bar .time {
+            flex: 1;
+            text-align: center;
+        }
 
-  <title>PC Simulator</title>
+        .ios-status-bar .icons {
+            display: flex;
+            gap: 5px;
+        }
 
-  <style>
-    /* Global Styles */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-    }
+        /* Bottom tab bar styling for iOS */
+        .ios-tab-bar {
+            height: 70px;
+            background-color: rgba(248, 248, 248, 0.9);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-top: 1px solid #e0e0e0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
 
-    .mobile-container {
-      width: 360px;
-      height: 640px;
-      border: 16px solid black;
-      border-radius: 16px;
-      background-color: #fff;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+        .tab-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #8e8e93;
+            font-size: 10px;
+            padding: 5px 0;
+        }
 
-    .content {
-      font-size: 1.2rem;
-      color: #333;
-    }
+        .tab-item.active {
+            color: var(--cta-color);
+        }
 
-    /* Adjustments for PC */
-    @media (min-width: 768px) {
-      .mobile-container {
-        width: 600px;
-        height: 1000px;
-      }
-
-      .content {
-        font-size: 1.5rem;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .mobile-container {
-        width: 800px;
-        height: 1400px;
-      }
-
-      .content {
-        font-size: 1.8rem;
-      }
-    }
-
-    /* Additional responsiveness for larger screens */
-    @media (min-width: 1200px) {
-      body {
-        justify-content: flex-start;
-      }
-
-      .mobile-container {
-        margin-top: 50px;
-      }
-    }
-  </style>
+        .tab-item i {
+            font-size: 22px;
+            margin-bottom: 3px;
+        }
+    </style>
 </head>
-
 <body>
-  <div class="mobile-container">
-    <div class="content">
-      <p>Mobile Simulator Screen</p>
-      <p>PC Version: Adjusted for larger screens.</p>
-    </div>
-  </div>
-</body>
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md py-4">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="flex items-center">
+                <svg class="h-8 w-8 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" fill="#5D4037"/>
+                    <path d="M8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12Z" fill="#D32F2F"/>
+                    <circle cx="12" cy="12" r="2" fill="#FFC107"/>
+                </svg>
+                <h1 class="text-xl font-bold" data-i18n="landingPage.footer.company">五感测试 | 中医疗愈</h1>
+            </div>
+            <div class="hidden md:flex items-center">
+                <a href="#how-it-works" class="mx-3 hover:text-gray-600" data-i18n="landingPage.nav.howItWorks">测试流程</a>
+                <a href="#benefits" class="mx-3 hover:text-gray-600" data-i18n="landingPage.nav.benefits">疗愈益处</a>
+                <a href="#testimonials" class="mx-3 hover:text-gray-600" data-i18n="landingPage.nav.testimonials">用户评价</a>
+                <a href="#pricing" class="mx-3 hover:text-gray-600" data-i18n="landingPage.nav.pricing">服务套餐</a>
+            </div>
+            <button class="md:hidden focus:outline-none">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
 
+    <!-- Hero Section with Video -->
+    <header class="hero-section py-16 md:py-24">
+        <div class="container mx-auto px-4 md:flex md:items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" data-i18n="landingPage.hero.title">
+                    发现您的天赋感官，开启个性化疗愈之旅
+                </h1>
+                <h2 class="text-xl md:text-2xl mb-6" data-i18n="landingPage.hero.subtitle">
+                    专业五感测试，精准定制中医五音五色疗愈方案
+                </h2>
+                <p class="text-lg mb-8" data-i18n="landingPage.hero.description">
+                    每个人都有独特的感官天赋，是您对音乐更敏感，还是对颜色更有共鸣？
+                    我们的测试将帮助您发现自己的天赋感官，并提供个性化的中医五音或五色疗愈方案。
+                </p>
+                <div class="flex flex-col sm:flex-row items-center">
+                    <a href="#test" class="cta-button pulse-animation text-center w-full sm:w-auto px-8 py-3 rounded-lg text-lg font-bold mb-4 sm:mb-0 sm:mr-4" data-i18n="landingPage.hero.cta">
+                        立即开始免费测试
+                    </a>
+                    <a href="#how-it-works" class="bg-transparent border-2 border-white text-center w-full sm:w-auto px-8 py-3 rounded-lg text-lg font-bold hover:bg-white hover:bg-opacity-20 transition duration-300" data-i18n="landingPage.hero.learnMore">
+                        了解更多
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative rounded-lg overflow-hidden shadow-xl">
+                    <!-- Video container with play button overlay -->
+                    <video class="w-full h-auto rounded-lg" poster="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" muted>
+                        <source src="https://example.com/videos/five-senses-test-intro.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
+                        <button class="bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-4 transition duration-300 play-video-btn">
+                            <svg class="w-12 h-12 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Urgency Countdown Section -->
+    <div class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center">
+            <div class="mb-3 md:mb-0 md:mr-6 text-center md:text-left">
+                <h3 class="text-xl font-bold" data-i18n="landingPage.countdown.title">限时优惠：今日完成测试可享</h3>
+                <p data-i18n="landingPage.countdown.description">专业五感测试报告+定制疗愈方案，原价¥299，现价仅需¥199</p>
+            </div>
+            <div class="countdown flex items-center px-4 py-2">
+                <span class="mr-2" data-i18n="landingPage.countdown.timeLeft">优惠剩余时间：</span>
+                <div id="countdown-timer" class="flex">
+                    <div class="bg-white text-gray-800 rounded px-2 py-1 mx-1">
+                        <span id="hours">10</span>
+                    </div>
+                    <span>:</span>
+                    <div class="bg-white text-gray-800 rounded px-2 py-1 mx-1">
+                        <span id="minutes">30</span>
+                    </div>
+                    <span>:</span>
+                    <div class="bg-white text-gray-800 rounded px-2 py-1 mx-1">
+                        <span id="seconds">00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Problem & Solution Section -->
+    <section id="problem-solution" class="py-12 md:py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="md:flex md:items-center md:space-x-8">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-3xl font-bold mb-4" data-i18n="landingPage.problem.title">
+                        还在为压力和健康问题困扰？你不是一个人！
+                    </h2>
+                    <p class="text-lg mb-6 text-gray-700" data-i18n="landingPage.problem.painPoint">
+                        低效的疗愈方法不仅浪费时间，更阻碍您达到理想的健康状态与平衡。
+                    </p>
+                    <p class="text-xl font-semibold mb-6" data-i18n="landingPage.problem.solution">
+                        五感测试为您量身打造，一键解决健康困扰，帮助您通过个性化疗愈实现平衡。
+                    </p>
+                    <div class="mt-8">
+                        <a href="#test" class="cta-button inline-block px-8 py-3 rounded-lg text-lg font-bold" data-i18n="landingPage.problem.cta">
+                            立即开始免费测试
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <!-- Animated GIF showing before/after comparison -->
+                    <div class="relative rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1616763355548-1b606f439f86?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Stress vs Relaxation" class="w-full h-auto rounded-lg">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="bg-white bg-opacity-90 p-4 rounded-lg text-center shadow-md">
+                                <div class="flex justify-center items-center space-x-8">
+                                    <div class="text-center">
+                                        <div class="w-16 h-16 mx-auto mb-2 rounded-full bg-red-100 flex items-center justify-center">
+                                            <i class="fas fa-dizzy text-red-500 text-2xl"></i>
+                                        </div>
+                                        <p class="font-semibold text-red-600" data-i18n="landingPage.problem.before">压力</p>
+                                    </div>
+                                    <div class="text-4xl font-light text-gray-400">→</div>
+                                    <div class="text-center">
+                                        <div class="w-16 h-16 mx-auto mb-2 rounded-full bg-green-100 flex items-center justify-center">
+                                            <i class="fas fa-smile-beam text-green-500 text-2xl"></i>
+                                        </div>
+                                        <p class="font-semibold text-green-600" data-i18n="landingPage.problem.after">平衡</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-12 md:py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12" data-i18n="landingPage.howItWorks.title">简单易用，三步上手！</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 shadow-md">
+                        <span class="text-2xl font-bold" style="color: var(--primary-color);">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2" data-i18n="landingPage.howItWorks.step1">完成五感测试</h3>
+                    <p data-i18n="landingPage.howItWorks.step1_desc">通过我们精心设计的交互式测试，测量您对音乐和颜色的敏感度</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 shadow-md">
+                        <span class="text-2xl font-bold" style="color: var(--secondary-color);">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2" data-i18n="landingPage.howItWorks.step2">获取天赋感官分析</h3>
+                    <p data-i18n="landingPage.howItWorks.step2_desc">我们的系统会分析您的反应，确定您是对音乐还是颜色更敏感</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 shadow-md">
+                        <span class="text-2xl font-bold" style="color: var(--accent-color-1);">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2" data-i18n="landingPage.howItWorks.step3">获得疗愈方案</h3>
+                    <p data-i18n="landingPage.howItWorks.step3_desc">基于您的天赋感官，我们将提供个性化的中医五音或五色疗愈方案</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 shadow-md">
+                        <span class="text-2xl font-bold" style="color: var(--accent-color-2);">4</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2" data-i18n="landingPage.howItWorks.step4">开始疗愈之旅</h3>
+                    <p data-i18n="landingPage.howItWorks.step4_desc">按照专业指导，在家轻松实践您的个性化疗愈方案，改善身心健康</p>
+                </div>
+            </div>
+            
+            <div class="flex justify-center mt-12">
+                <a href="#test" class="cta-button px-8 py-3 rounded-lg text-lg font-bold" data-i18n="landingPage.howItWorks.cta">
+                    立即开始测试
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section id="features" class="py-12 md:py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4" data-i18n="landingPage.features.title">改变您健康旅程的核心功能</h2>
+            <p class="text-center text-lg mb-12 max-w-3xl mx-auto" data-i18n="landingPage.features.subtitle">
+                通过科学测试和个性化方案，帮助您实现身心平衡与健康提升
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Feature 1 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105">
+                    <div class="relative h-48 overflow-hidden">
+                        <!-- GIF showing sensory talent test -->
+                        <img src="https://images.unsplash.com/photo-1562254910-777a9e12c2cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Sensory test" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent flex items-end">
+                            <h3 class="text-white text-xl font-bold px-4 pb-3" data-i18n="landingPage.features.feature1.title">场景一：缓解压力 - 发现您的天赋感官</h3>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-700" data-i18n="landingPage.features.feature1.description">我们的专业评估可识别您是对音乐还是颜色更敏感，指导您找到完美的疗愈路径。</p>
+                        <div class="mt-4 flex">
+                            <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full mr-2">
+                                <i class="fas fa-check-circle mr-1"></i>
+                                <span data-i18n="landingPage.features.feature1.benefit1">准确率95%+</span>
+                            </span>
+                            <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">
+                                <i class="fas fa-check-circle mr-1"></i>
+                                <span data-i18n="landingPage.features.feature1.benefit2">5分钟完成</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105">
+                    <div class="relative h-48 overflow-hidden">
+                        <!-- GIF showing personalized healing plan -->
+                        <img src="https://images.unsplash.com/photo-1528495612343-9ca9f4a4de28?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Personalized healing" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent flex items-end">
+                            <h3 class="text-white text-xl font-bold px-4 pb-3" data-i18n="landingPage.features.feature2.title">场景二：个性化疗愈 - 定制五音或五色疗法</h3>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-700" data-i18n="landingPage.features.feature2.description">基于您的感官天赋，获取针对特定健康需求的定制疗愈方案。</p>
+                        <div class="mt-4 flex">
+                            <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full mr-2">
+                                <i class="fas fa-check-circle mr-1"></i>
+                                <span data-i18n="landingPage.features.feature2.benefit1">中医五行理论</span>
+                            </span>
+                            <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">
+                                <i class="fas fa-check-circle mr-1"></i>
+                                <span data-i18n="landingPage.features.feature2.benefit2">专业定制方案</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105">
+                    <div class="relative h-48 overflow-hidden">
+                        <!-- GIF showing daily practice routine -->
+                        <img src="https://images.unsplash.com/photo-1512438248247-f0f2a5a8b7f0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Daily practice" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent flex items-end">
+                            <h3 class="text-white text-xl font-bold px-4 pb-3" data-i18n="landingPage.features.feature3.title">场景三：日常实践 - 简单有效的疗愈习惯</h3>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-700" data-i18n="landingPage.features.feature3.description">每天仅需15分钟，通过我们的引导疗愈资源，带来显著的健康改善。</p>
+                        <div class="mt-4 flex">
+                            <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full mr-2">
+                                <i class="fas fa-check-circle mr-1"></i>
+                                <span data-i18n="landingPage.features.feature3.benefit1">简单易行</span>
+                            </span>
+                            <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">
+                                <i class="fas fa-check-circle mr-1"></i>
+                                <span data-i18n="landingPage.features.feature3.benefit2">显著效果</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex justify-center mt-12">
+                <a href="#pricing" class="cta-button px-8 py-3 rounded-lg text-lg font-bold" data-i18n="landingPage.features.cta">
+                    查看服务套餐
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section id="value" class="py-12 md:py-20 bg-gradient-to-r from-indigo-600 to-purple-700 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="landingPage.value.title">
+                五感测试 - 健康关注者的终极工具！
+            </h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto" data-i18n="landingPage.value.subtitle">
+                我们致力于帮助健康关注者通过古老智慧和现代科学，实现压力减轻70%，睡眠质量提升80%。
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto">
+                <div class="bg-white bg-opacity-20 p-6 rounded-lg backdrop-filter backdrop-blur-sm">
+                    <div class="w-16 h-16 mx-auto bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-brain text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="landingPage.value.benefit1">情绪平衡</h3>
+                    <p data-i18n="landingPage.value.benefit1_desc">
+                        95% 的用户报告情绪稳定性显著提升，更加平静和专注
+                    </p>
+                </div>
+                
+                <div class="bg-white bg-opacity-20 p-6 rounded-lg backdrop-filter backdrop-blur-sm">
+                    <div class="w-16 h-16 mx-auto bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-bed text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="landingPage.value.benefit2">睡眠质量</h3>
+                    <p data-i18n="landingPage.value.benefit2_desc">
+                        80% 的用户在使用2周后报告睡眠质量明显改善，入睡时间缩短
+                    </p>
+                </div>
+                
+                <div class="bg-white bg-opacity-20 p-6 rounded-lg backdrop-filter backdrop-blur-sm">
+                    <div class="w-16 h-16 mx-auto bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-heart text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="landingPage.value.benefit3">整体健康</h3>
+                    <p data-i18n="landingPage.value.benefit3_desc">
+                        85% 的用户在一个月内感受到能量水平提升和压力减轻
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-12">
+                <a href="#test" class="bg-white text-indigo-700 px-8 py-4 rounded-lg text-xl font-bold hover:bg-opacity-90 transition duration-300" data-i18n="landingPage.value.cta">
+                    立即开始免费测试
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Preview Section -->
+    <section id="preview" class="py-12 md:py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4" data-i18n="landingPage.preview.title">
+                抢先预览 - 五感测试核心功能一览
+            </h2>
+            <p class="text-center text-lg mb-12 max-w-3xl mx-auto" data-i18n="landingPage.preview.subtitle">
+                滑动浏览，发现五感测试如何帮助您高效实现健康改善
+            </p>
+            
+            <div class="flex flex-wrap justify-center" id="app-previews">
+                <!-- App preview iframes will be dynamically inserted here -->
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="test.html" target="_blank" class="cta-button inline-block px-8 py-3 rounded-lg text-lg font-bold" data-i18n="landingPage.preview.fullDemo">
+                    体验完整App Demo - 五感测试功能全貌抢先看！
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-12 md:py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4" data-i18n="landingPage.testimonials.title">超过10,000用户的共同选择！</h2>
+            <p class="text-center text-lg mb-12 max-w-3xl mx-auto" data-i18n="landingPage.testimonials.subtitle">
+                看看已经通过五感测试和中医疗愈方案获得改善的用户们怎么说
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 rounded-full overflow-hidden bg-gray-200 mr-4 flex-shrink-0">
+                            <svg viewBox="0 0 24 24" fill="#A0AEC0" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 14.5C13.6569 14.5 15 13.1569 15 11.5C15 9.84315 13.6569 8.5 12 8.5C10.3431 8.5 9 9.84315 9 11.5C9 13.1569 10.3431 14.5 12 14.5Z"/>
+                                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 5C13.66 5 15 6.34 15 8C15 9.66 13.66 11 12 11C10.34 11 9 9.66 9 8C9 6.34 10.34 5 12 5ZM12 19.2C9.5 19.2 7.29 17.92 6 15.98C6.03 13.99 10 12.9 12 12.9C13.99 12.9 17.97 13.99 18 15.98C16.71 17.92 14.5 19.2 12 19.2Z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg" data-i18n="landingPage.testimonials.testimonial1.name">李女士，教师</h4>
+                            <p class="text-sm text-gray-600" data-i18n="landingPage.testimonials.testimonial1.type">音乐敏感型</p>
+                            <div class="flex text-yellow-400 mt-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="italic text-gray-700 mb-2" data-i18n="landingPage.testimonials.testimonial1.text">
+                            "测试发现我对音乐特别敏感，每天遵循定制的五音疗愈方案后，我的睡眠质量显著改善了。之前需要半小时才能入睡，现在几分钟就能进入深度睡眠。早上起床也更有精神了。"
+                        </p>
+                        <p class="text-sm text-gray-500" data-i18n="landingPage.testimonials.testimonial1.result">
+                            — 已使用五音疗愈方案4个月，睡眠质量提升80%
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 rounded-full overflow-hidden bg-gray-200 mr-4 flex-shrink-0">
+                            <svg viewBox="0 0 24 24" fill="#A0AEC0" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 14.5C13.6569 14.5 15 13.1569 15 11.5C15 9.84315 13.6569 8.5 12 8.5C10.3431 8.5 9 9.84315 9 11.5C9 13.1569 10.3431 14.5 12 14.5Z"/>
+                                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 5C13.66 5 15 6.34 15 8C15 9.66 13.66 11 12 11C10.34 11 9 9.66 9 8C9 6.34 10.34 5 12 5ZM12 19.2C9.5 19.2 7.29 17.92 6 15.98C6.03 13.99 10 12.9 12 12.9C13.99 12.9 17.97 13.99 18 15.98C16.71 17.92 14.5 19.2 12 19.2Z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg" data-i18n="landingPage.testimonials.testimonial2.name">张先生，IT工程师</h4>
+                            <p class="text-sm text-gray-600" data-i18n="landingPage.testimonials.testimonial2.type">颜色敏感型</p>
+                            <div class="flex text-yellow-400 mt-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="italic text-gray-700 mb-2" data-i18n="landingPage.testimonials.testimonial2.text">
+                            "五感测试太精准了！我确实对颜色特别敏感。按照建议改变了家居颜色，工作压力减轻了很多，注意力也更集中了。而且不再有经常性的头痛问题了。"
+                        </p>
+                        <p class="text-sm text-gray-500" data-i18n="landingPage.testimonials.testimonial2.result">
+                            — 已使用五色疗愈方案6个月，工作效率提升65%
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- More testimonials can be added here -->
+            </div>
+            
+            <!-- Client logos -->
+            <div class="mt-16">
+                <h3 class="text-xl font-semibold text-center mb-8" data-i18n="landingPage.testimonials.partnersTitle">受到行业领导者的信任</h3>
+                <div class="flex flex-wrap justify-center items-center">
+                    <div class="px-8 py-4 opacity-70 hover:opacity-100 transition duration-300">
+                        <img src="https://via.placeholder.com/150x50?text=Partner+1" alt="Partner Logo" class="h-10">
+                    </div>
+                    <div class="px-8 py-4 opacity-70 hover:opacity-100 transition duration-300">
+                        <img src="https://via.placeholder.com/150x50?text=Partner+2" alt="Partner Logo" class="h-10">
+                    </div>
+                    <div class="px-8 py-4 opacity-70 hover:opacity-100 transition duration-300">
+                        <img src="https://via.placeholder.com/150x50?text=Partner+3" alt="Partner Logo" class="h-10">
+                    </div>
+                    <div class="px-8 py-4 opacity-70 hover:opacity-100 transition duration-300">
+                        <img src="https://via.placeholder.com/150x50?text=Partner+4" alt="Partner Logo" class="h-10">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Test Section -->
+    <section id="test" class="py-12 md:py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4" data-i18n="landingPage.test.title">开始您的五感测试</h2>
+            <p class="text-center text-lg mb-8 max-w-3xl mx-auto" data-i18n="landingPage.test.subtitle">
+                完成以下互动测试，探索您的感官天赋，获取个性化中医疗愈方案
+            </p>
+            
+            <!-- Test Start UI -->
+            <div id="test-start" class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
+                <div class="text-center mb-6">
+                    <svg class="w-20 h-20 mx-auto mb-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="#5D4037" stroke-width="2"/>
+                        <path d="M9 16S10 13 12 13s3 3 3 3" stroke="#5D4037" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="9" cy="9" r="1.5" fill="#5D4037"/>
+                        <circle cx="15" cy="9" r="1.5" fill="#5D4037"/>
+                    </svg>
+                    <h3 class="text-2xl font-bold mb-2" data-i18n="app.testStart.title">准备好发现您的天赋感官了吗？</h3>
+                    <p class="text-gray-600 mb-4" data-i18n="app.testStart.description">
+                        这个测试将评估您对音乐和颜色的敏感度，测试时间约5分钟
+                    </p>
+                </div>
+                
+                <div class="space-y-4 mb-6">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        <p data-i18n="app.testStart.features.0">测试包含音乐与颜色敏感度评估</p>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        <p data-i18n="app.testStart.features.1">获取详细的天赋感官分析</p>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        <p data-i18n="app.testStart.features.2">领取个性化中医五音或五色疗愈方案</p>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center">
+                    <a href="test.html" class="test-button px-8 py-3 rounded-lg text-lg font-bold" data-i18n="app.testStart.button">
+                        开始测试
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-12 md:py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4" data-i18n="landingPage.pricing.title">超值定价，核心功能触手可及！</h2>
+            <p class="text-center text-lg mb-12 max-w-3xl mx-auto" data-i18n="landingPage.pricing.subtitle">
+                多种灵活套餐，满足不同需求，总有一款适合您！立即选择最适合您的套餐，开启健康提升之旅！
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Basic Package -->
+                <div class="pricing-card p-8">
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold mb-2" data-i18n="landingPage.pricing.basic.title">基础体验</h3>
+                        <div class="flex justify-center items-end">
+                            <span class="text-3xl font-bold" data-i18n="landingPage.pricing.basic.price">¥199</span>
+                            <span class="text-gray-500 ml-2 line-through" data-i18n="landingPage.pricing.basic.originalPrice">¥299</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-2" data-i18n="landingPage.pricing.basic.payment">一次性付款</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span data-i18n="landingPage.pricing.basic.features.0">完整五感测试及分析报告</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span data-i18n="landingPage.pricing.basic.features.1">基础版五音或五色疗愈方案（PDF）</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span data-i18n="landingPage.pricing.basic.features.2">5段定制疗愈音乐/色彩冥想指导</span>
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <svg class="w-5 h-5 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                            <span data-i18n="landingPage.pricing.expertConsultation">专家一对一咨询</span>
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <svg class="w-5 h-5 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                            <span data-i18n="landingPage.pricing.progressAssessment">季度进展评估</span>
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <svg class="w-5 h-5 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                            <span data-i18n="landingPage.pricing.advancedVideos">高级疗愈指导视频</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="text-center">
+                        <a href="#" class="cta-button inline-block w-full py-3 rounded-lg font-bold" data-i18n="landingPage.pricing.buyNow">
+                            立即购买
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Professional Package -->
+                <div class="pricing-card p-8 popular-plan">
+                    <div class="bg-yellow-100 text-yellow-800 text-center py-1 px-4 rounded-full text-sm font-semibold mb-4" data-i18n="landingPage.pricing.professional.tag">
+                        最受欢迎
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold mb-2" data-i18n="landingPage.pricing.professional.title">专业提升</h3>
+                        <div class="flex justify-center items-end">
+                            <span class="text-3xl font-bold" data-i18n="landingPage.pricing.professional.price">¥499</span>
+                            <span class="text-gray-500 ml-2 line-through" data-i18n="landingPage.pricing.professional.originalPrice">¥799</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-2" data-i18n="landingPage.pricing.professional.payment">一次性付款</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span data-i18n="landingPage.pricing.professional.features.0">完整五感测试及详细分析报告</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span data-i18n="landingPage.pricing.professional.features.1">高级版五音或五色疗愈方案（PDF）</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span data-i18n="landingPage.pricing.professional.features.2">12段定制疗愈音乐/色彩冥想指导</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span data-i18n="landingPage.pricing.professional.features.3">专家一对一咨询（2次）</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span data-i18n="landingPage.pricing.professional.features.4">季度进展评估（1次）</span>
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <svg class="w-5 h-5 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                            <span data-i18n="landingPage.pricing.advancedVideos">高级疗愈指导视频</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="text-center">
+                        <a href="#" class="cta-button inline-block w-full py-3 rounded-lg font-bold" data-i18n="landingPage.pricing.buyNow">
+                            立即购买
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- VIP Package -->
+                <div class="pricing-card p-8">
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold mb-2" data-i18n="landingPage.pricing.vip.title">尊享VIP</h3>
+                        <div class="flex justify-center items-end">
+                            <span class="text-3xl font-bold" data-i18n="landingPage.pricing.vip.price">¥999</span>
+                            <span class="text-gray-500 ml-2 line-through" data-i18n="landingPage.pricing.vip.originalPrice">¥1599</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-2" data-i18n="landingPage.pricing.vip.payment">一次性付款 或 ¥333×3期</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span data-i18n="landingPage.pricing.vip.features.0">完整五感测试及专家深度分析报告</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span data-i18n="landingPage.pricing.vip.features.1">定制全方位五音五色综合疗愈方案</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span data-i18n="landingPage.pricing.vip.features.2">30段定制疗愈音乐/色彩冥想指导</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span data-i18n="landingPage.pricing.vip.features.3">专家一对一咨询（6次）</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span data-i18n="landingPage.pricing.vip.features.4">季度进展评估（4次）</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span data-i18n="landingPage.pricing.vip.features.5">高级疗愈指导视频（20课时）</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="text-center">
+                        <a href="#" class="cta-button inline-block w-full py-3 rounded-lg font-bold" data-i18n="landingPage.pricing.buyNow">
+                            立即购买
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <div class="bg-yellow-50 p-6 rounded-lg inline-block max-w-3xl">
+                    <h3 class="text-xl font-bold mb-4" data-i18n="landingPage.pricing.guarantee.title">100%满意保证</h3>
+                    <p class="mb-2" data-i18n="landingPage.pricing.guarantee.description">
+                        我们对五感测试和疗愈方案的效果充满信心。如果您在30天内对测试结果或疗愈效果不满意，我们将全额退款，无需任何理由。
+                    </p>
+                    <div class="flex justify-center items-center mt-4">
+                        <svg class="w-10 h-10 mr-3 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                        <span class="font-semibold" data-i18n="landingPage.pricing.guarantee.tag">30天无忧退款保证</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waiting List Section -->
+    <section id="waitlist" class="py-12 md:py-20 bg-gradient-to-r from-accent-color-1 to-accent-color-2 bg-opacity-15">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4" data-i18n="landingPage.waitlist.title">抢先体验内测资格，赢在起跑线！</h2>
+                <p class="text-lg mb-8" data-i18n="landingPage.waitlist.subtitle">
+                    加入五感测试独家内测等待列表，第一时间获取内测邀请码，限量福利，和专属优惠！名额有限，立即加入！
+                </p>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <form class="space-y-4">
+                        <div>
+                            <input type="email" placeholder="请输入您的邮箱地址" data-i18n-placeholder="landingPage.waitlist.placeholder" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-color-1" required>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-accent-color-1 text-white py-3 rounded-lg font-bold hover:bg-opacity-90 transition duration-300" data-i18n="landingPage.waitlist.button">
+                                加入等待列表
+                            </button>
+                        </div>
+                    </form>
+                    <p class="text-sm text-gray-500 mt-4">
+                        <i class="fas fa-lock mr-1"></i>
+                        <span data-i18n="landingPage.waitlist.privacy">我们尊重您的隐私，绝不会分享您的信息</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Video Stream Section -->
+    <section id="youtube" class="py-12 md:py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4" data-i18n="landingPage.youtube.title">
+                用户真实案例 - 看五感测试如何助力健康关注者实现平衡
+            </h2>
+            <p class="text-center text-lg mb-12 max-w-3xl mx-auto" data-i18n="landingPage.youtube.subtitle">
+                观看我们的视频，了解真实用户体验和疗愈效果
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- YouTube Video 1 -->
+                <div class="rounded-lg overflow-hidden shadow-md">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <!-- Replace with actual YouTube embed code -->
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <h3 class="font-bold mb-2" data-i18n="landingPage.youtube.video1.title">用户故事：音乐疗愈改善失眠</h3>
+                        <p class="text-sm text-gray-600" data-i18n="landingPage.youtube.video1.views">观看次数：12,345</p>
+                    </div>
+                </div>
+                
+                <!-- YouTube Video 2 -->
+                <div class="rounded-lg overflow-hidden shadow-md">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <!-- Replace with actual YouTube embed code -->
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <h3 class="font-bold mb-2" data-i18n="landingPage.youtube.video2.title">专家解析：五色疗愈与情绪平衡</h3>
+                        <p class="text-sm text-gray-600" data-i18n="landingPage.youtube.video2.views">观看次数：8,765</p>
+                    </div>
+                </div>
+                
+                <!-- YouTube Video 3 -->
+                <div class="rounded-lg overflow-hidden shadow-md">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <!-- Replace with actual YouTube embed code -->
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <h3 class="font-bold mb-2" data-i18n="landingPage.youtube.video3.title">五感测试流程详解</h3>
+                        <p class="text-sm text-gray-600" data-i18n="landingPage.youtube.video3.views">观看次数：5,678</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="https://www.youtube.com/channel/example" target="_blank" class="inline-flex items-center text-secondary-color hover:underline">
+                    <span data-i18n="landingPage.youtube.viewMore">查看更多视频</span>
+                    <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Twitter Feed Section -->
+    <section id="twitter" class="py-12 md:py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4" data-i18n="landingPage.twitter.title">
+                用户口碑 - Twitter实时热议五感测试的核心优势
+            </h2>
+            <p class="text-center text-lg mb-12 max-w-3xl mx-auto" data-i18n="landingPage.twitter.subtitle">
+                看看用户们如何评价他们的疗愈之旅
+            </p>
+            
+            <div class="max-w-5xl mx-auto">
+                <!-- Twitter Feed Placeholder -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-center text-gray-500 mb-4">
+                        <i class="fab fa-twitter text-blue-400 text-2xl"></i>
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Tweet 1 -->
+                        <div class="border rounded-lg p-4 hover:shadow-md transition duration-300">
+                            <div class="flex items-center mb-3">
+                                <svg class="w-10 h-10 rounded-full mr-3" viewBox="0 0 24 24" fill="#A0AEC0" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 14.5C13.6569 14.5 15 13.1569 15 11.5C15 9.84315 13.6569 8.5 12 8.5C10.3431 8.5 9 9.84315 9 11.5C9 13.1569 10.3431 14.5 12 14.5Z"/>
+                                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 5C13.66 5 15 6.34 15 8C15 9.66 13.66 11 12 11C10.34 11 9 9.66 9 8C9 6.34 10.34 5 12 5ZM12 19.2C9.5 19.2 7.29 17.92 6 15.98C6.03 13.99 10 12.9 12 12.9C13.99 12.9 17.97 13.99 18 15.98C16.71 17.92 14.5 19.2 12 19.2Z"/>
+                                </svg>
+                                <!-- ... existing code ... -->
+                            </div>
+                        </div>
+                        
+                        <!-- Tweet 2 -->
+                        <div class="border rounded-lg p-4 hover:shadow-md transition duration-300">
+                            <div class="flex items-center mb-3">
+                                <svg class="w-10 h-10 rounded-full mr-3" viewBox="0 0 24 24" fill="#A0AEC0" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 14.5C13.6569 14.5 15 13.1569 15 11.5C15 9.84315 13.6569 8.5 12 8.5C10.3431 8.5 9 9.84315 9 11.5C9 13.1569 10.3431 14.5 12 14.5Z"/>
+                                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 5C13.66 5 15 6.34 15 8C15 9.66 13.66 11 12 11C10.34 11 9 9.66 9 8C9 6.34 10.34 5 12 5ZM12 19.2C9.5 19.2 7.29 17.92 6 15.98C6.03 13.99 10 12.9 12 12.9C13.99 12.9 17.97 13.99 18 15.98C16.71 17.92 14.5 19.2 12 19.2Z"/>
+                                </svg>
+                                <!-- ... existing code ... -->
+                            </div>
+                        </div>
+                        
+                        <!-- Tweet 3 -->
+                        <div class="border rounded-lg p-4 hover:shadow-md transition duration-300">
+                            <div class="flex items-center mb-3">
+                                <svg class="w-10 h-10 rounded-full mr-3" viewBox="0 0 24 24" fill="#A0AEC0" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 14.5C13.6569 14.5 15 13.1569 15 11.5C15 9.84315 13.6569 8.5 12 8.5C10.3431 8.5 9 9.84315 9 11.5C9 13.1569 10.3431 14.5 12 14.5Z"/>
+                                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 5C13.66 5 15 6.34 15 8C15 9.66 13.66 11 12 11C10.34 11 9 9.66 9 8C9 6.34 10.34 5 12 5ZM12 19.2C9.5 19.2 7.29 17.92 6 15.98C6.03 13.99 10 12.9 12 12.9C13.99 12.9 17.97 13.99 18 15.98C16.71 17.92 14.5 19.2 12 19.2Z"/>
+                                </svg>
+                                <!-- ... existing code ... -->
+                            </div>
+                        </div>
+                        
+                        <!-- Tweet 4 -->
+                        <div class="border rounded-lg p-4 hover:shadow-md transition duration-300">
+                            <div class="flex items-center mb-3">
+                                <svg class="w-10 h-10 rounded-full mr-3" viewBox="0 0 24 24" fill="#A0AEC0" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 14.5C13.6569 14.5 15 13.1569 15 11.5C15 9.84315 13.6569 8.5 12 8.5C10.3431 8.5 9 9.84315 9 11.5C9 13.1569 10.3431 14.5 12 14.5Z"/>
+                                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 5C13.66 5 15 6.34 15 8C15 9.66 13.66 11 12 11C10.34 11 9 9.66 9 8C9 6.34 10.34 5 12 5ZM12 19.2C9.5 19.2 7.29 17.92 6 15.98C6.03 13.99 10 12.9 12 12.9C13.99 12.9 17.97 13.99 18 15.98C16.71 17.92 14.5 19.2 12 19.2Z"/>
+                                </svg>
+                                <!-- ... existing code ... -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-12 md:py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12" data-i18n="landingPage.faq.title">常见问题解答</h2>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- FAQ Item 1 -->
+                <div class="mb-6 border-b pb-4">
+                    <h3 class="text-xl font-semibold mb-2" data-i18n="landingPage.faq.q1">五感测试的准确度如何？</h3>
+                    <p data-i18n="landingPage.faq.a1">
+                        我们的五感测试基于大量科学研究和中医理论设计，通过数千名用户的验证，准确率超过95%。测试采用多维度评估方法，确保结果的可靠性和稳定性。
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="mb-6 border-b pb-4">
+                    <h3 class="text-xl font-semibold mb-2" data-i18n="landingPage.faq.q2">五音五色疗愈方案多久能见效？</h3>
+                    <p data-i18n="landingPage.faq.a2">
+                        大多数用户在坚持使用2-4周后开始感受到明显效果。轻度问题（如轻微焦虑、睡眠质量下降）通常2周内就能改善，而慢性问题（如长期压力、情绪波动）则需要1-3个月的持续实践。
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="mb-6 border-b pb-4">
+                    <h3 class="text-xl font-semibold mb-2" data-i18n="landingPage.faq.q3">我需要专业的音乐或艺术背景吗？</h3>
+                    <p data-i18n="landingPage.faq.a3">
+                        完全不需要。我们的五音五色疗愈方案设计得简单易行，适合所有人使用，不需要任何音乐或艺术背景。方案中会有详细的引导和说明，确保您能轻松上手。
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="mb-6 border-b pb-4">
+                    <h3 class="text-xl font-semibold mb-2" data-i18n="landingPage.faq.q4">如果我同时对音乐和颜色都敏感怎么办？</h3>
+                    <p data-i18n="landingPage.faq.a4">
+                        这很正常！许多人同时具备对音乐和颜色的敏感性，只是程度不同。我们的测试会评估哪种感官敏感度更强，并优先推荐相应的疗愈方案。高级套餐中，我们会提供五音五色综合疗愈方案，同时照顾到您的多种感官敏感性。
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="mb-6 border-b pb-4">
+                    <h3 class="text-xl font-semibold mb-2" data-i18n="landingPage.faq.q5">五音五色疗愈方案每天需要花多少时间？</h3>
+                    <p data-i18n="landingPage.faq.a5">
+                        基础的疗愈练习每天只需10-15分钟，适合忙碌的现代人。您可以灵活安排在早晨起床后或晚上睡前进行。针对特定健康目标的强化练习可能需要20-30分钟，但频率可以根据个人情况调整。
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 6 -->
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold mb-2" data-i18n="landingPage.faq.q6">购买后如果我有疑问，可以获得支持吗？</h3>
+                    <p data-i18n="landingPage.faq.a6">
+                        当然可以。所有套餐都包含电子邮件支持服务，专业和尊享VIP套餐还包含一对一专家咨询服务。我们的专业团队会及时解答您在实践过程中遇到的任何问题，确保您获得最佳疗愈效果。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-16 md:py-24 bg-gradient-to-r from-pink-600 to-orange-500 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="landingPage.finalCta.title">
+                开始您的个性化中医疗愈之旅
+            </h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto" data-i18n="landingPage.finalCta.subtitle">
+                发现您的天赋感官，获取专属疗愈方案，让五音五色的力量为您的身心健康带来改变
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center">
+                <a href="#test" class="cta-button pulse-animation px-8 py-4 rounded-lg text-xl font-bold mb-4 sm:mb-0 sm:mr-4 w-full sm:w-auto" data-i18n="landingPage.finalCta.button1">
+                    立即开始免费测试
+                </a>
+                <a href="#pricing" class="bg-transparent border-2 border-white px-8 py-4 rounded-lg text-xl font-bold hover:bg-white hover:bg-opacity-20 transition duration-300 w-full sm:w-auto" data-i18n="landingPage.finalCta.button2">
+                    查看服务套餐
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4" data-i18n="landingPage.footer.company">五感测试 | 中医疗愈</h3>
+                    <p class="mb-4" data-i18n="landingPage.footer.description">
+                        发现您的天赋感官，开启个性化疗愈之旅
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-gray-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="hover:text-gray-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="hover:text-gray-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-i18n="landingPage.footer.nav">导航</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#how-it-works" class="hover:text-gray-300" data-i18n="landingPage.nav.howItWorks">测试流程</a></li>
+                        <li><a href="#benefits" class="hover:text-gray-300" data-i18n="landingPage.nav.benefits">疗愈益处</a></li>
+                        <li><a href="#testimonials" class="hover:text-gray-300" data-i18n="landingPage.nav.testimonials">用户评价</a></li>
+                        <li><a href="#pricing" class="hover:text-gray-300" data-i18n="landingPage.nav.pricing">服务套餐</a></li>
+                        <li><a href="#test" class="hover:text-gray-300" data-i18n="landingPage.nav.test">开始测试</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-i18n="landingPage.footer.contact">联系我们</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2"></i>
+                            <span data-i18n="landingPage.footer.email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c8bbbdb8b8a7babc88bfbdafa9a6abade6aba7a5">[email&#160;protected]</a></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-2"></i>
+                            <span data-i18n="landingPage.footer.phone">400-888-9999</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                            <span data-i18n="landingPage.footer.address">北京市朝阳区健康路88号中医大厦15层</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-i18n="landingPage.footer.subscribe">订阅资讯</h4>
+                    <p class="mb-4" data-i18n="landingPage.footer.subscribeText">
+                        订阅我们的电子报，获取五音五色疗愈的最新研究和实践指南
+                    </p>
+                    <form class="space-y-2">
+                        <input type="email" placeholder="您的邮箱地址" data-i18n-placeholder="landingPage.footer.placeholder" class="w-full px-4 py-2 rounded bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-white">
+                        <button type="submit" class="w-full px-4 py-2 bg-white text-gray-800 rounded font-semibold hover:bg-gray-200 transition duration-300" data-i18n="landingPage.footer.button">
+                            订阅
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-sm">
+                <div class="mb-4">
+                    <label for="language-selector" class="mr-2" data-i18n="landingPage.footer.language">语言:</label>
+                    <select id="language-selector" class="language-switcher bg-gray-700 text-white px-2 py-1 rounded border border-gray-600 focus:outline-none focus:border-white">
+                        <option value="zh">中文</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+                <p class="mb-2" data-i18n="landingPage.footer.copyright"> 2023 五感测试 | 中医疗愈. 保留所有权利.</p>
+                <p class="text-gray-400 mb-4" data-i18n="landingPage.footer.disclaimer">本网站内容仅供参考，不构成医疗建议，如有健康问题请咨询专业医生。</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white" data-i18n="landingPage.footer.privacy">隐私政策</a>
+                    <a href="#" class="text-gray-400 hover:text-white" data-i18n="landingPage.footer.terms">服务条款</a>
+                    <a href="#" class="text-gray-400 hover:text-white" data-i18n="landingPage.footer.contact_us">联系我们</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load JavaScript -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="i18n.js"></script>
+    <script src="app.js"></script>
+    <script>
+        // Play video functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const videoContainer = document.querySelector('.hero-section .relative');
+            const video = videoContainer.querySelector('video');
+            const playButton = videoContainer.querySelector('.play-video-btn');
+            
+            if (playButton && video) {
+                playButton.addEventListener('click', function() {
+                    video.play();
+                    this.parentNode.classList.add('hidden');
+                });
+                
+                video.addEventListener('ended', function() {
+                    playButton.parentNode.classList.remove('hidden');
+                });
+            }
+        });
+    </script>
+</body>
 </html>
